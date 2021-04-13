@@ -21,6 +21,7 @@ def get_text(comment_num):
     return text
 
 
+
 max_word_num = get_max_word_num(train_data)
 print(max_word_num)
 comment = get_text(train_data[0])
