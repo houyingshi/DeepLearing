@@ -35,8 +35,8 @@ class MultiClassifier:
 
     def plt_loss(self, history):
         plt.clf()
-        loss = history.histroy['loss']
-        val_loss = history.histroy['val_loss']
+        loss = history.history['loss']
+        val_loss = history.history['val_loss']
         epochs = range(1, len(loss) + 1)
         plt.plot(epochs, loss, 'bo', label='Training loss')
         plt.plot(epochs, val_loss, 'b', label='Validation loss')
@@ -47,8 +47,8 @@ class MultiClassifier:
 
     def plt_accuracy(self, history):
         plt.clf()
-        acc = history.histroy['accuracy']
-        val_acc = history.histroy['val_accuracy']
+        acc = history.history['accuracy']
+        val_acc = history.history['val_accuracy']
         epochs = range(1, len(acc) + 1)
 
         plt.plot(epochs, acc, 'bo', label='Training accuracy')
@@ -101,6 +101,7 @@ class MultiClassifier:
             self.plt_loss(history)
             self.plt_accuracy(history)
 
+classifier = MultiClassifier(num_words=10000, epochs=20)
 
-classifier = MultiClassifier(num_words=10000, epochs=9)
+# classifier = MultiClassifier(num_words=10000, epochs=9)
 classifier.train()
